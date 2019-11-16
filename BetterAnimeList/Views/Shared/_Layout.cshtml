@@ -1,0 +1,114 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/cr-1.5.2/datatables.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="~/css/styles.css" />
+
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg" id="navbar">
+
+                <button class="navbar-toggler cool-blue"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars fa-1x"></i></span>
+                </button>
+
+
+                <div class="navbar-collapse collapse"
+                     id="navbarSupportedContent">
+
+                    <a class="navbar-brand"
+                       asp-area=""
+                       asp-controller="Home"
+                       asp-action="Index">
+                        <img src="https://i.ibb.co/sgjNCzT/TennOs.png"
+                             height="50"
+                             width="50"
+                             alt="BetterAnimeList" />
+                    </a>
+
+                    <ul class="navbar-nav mr-auto">
+
+
+                        <li class="nav-item" id="PrivacyLink">
+                            <a class="nav-link" asp-area=""
+                               asp-controller="Home"
+                               asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item" id="UserListLink">
+                            <a class="nav-link" asp-area=""
+                               asp-controller="Home"
+                               asp-action="UserList">UserList</a>
+                        </li>
+                        <li class="nav-item" id="UploadTestLink">
+                            <a class="nav-link" asp-area=""
+                               asp-controller="Home"
+                               asp-action="UploadTest">UploadTest</a>
+                        </li>
+
+
+
+                        <!--Logged In-->
+                        @if (@HttpContextAccessor.HttpContext.Session.GetString("username") != string.Empty && @HttpContextAccessor.HttpContext.Session.GetString("username") != null)
+                        {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AnimeList">AnimeList</a>
+                        </li>
+                        }
+                        else
+                        {
+                        <!-- Logged Out-->
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                        </li>
+                        }
+                    </ul>
+                </div>
+        </nav>
+  
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="card-footer text-muted">
+        <div class="container">
+            &copy; 2019 - BetterAnimeList - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/cr-1.5.2/datatables.min.js"></script>
+
+    
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿
+
+@*<input type="file" id="FileUpload1" />
+<input type="button" id="btnUpload" value="Upload Files" />*@
+
+<form id="form" name="form" enctype="multipart/form-data" method="post">
+    <div class="buttons">
+        <div class="upload-button">
+            <div class="label">Upload File</div>
+            <input type="file" name="FileUpload" id="FileUpload">
+        </div>
+        <input type="button" name="submit" id="btnUpload" value="Upload Files">
+    </div>
+</form>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#btnUpload').click(function () {
+
+            // Checking whether FormData is available in browser
+            if (window.FormData !== undefined) {
+
+                var fileUpload = $("#FileUpload")[0].files[0];
+                //var fileUpload = $("#FileUpload1").get(0);
+                var files = fileUpload.files;
+                //alert(fileUpload.files);
+                // Create FormData object
+                //var fileData = new FormData();
+
+
+                var fileData = new FormData();
+                    fileData.append("files", fileUpload);
+
+                // Looping over all files and add it to FormData object
+                //for (var i = 0; i < files.length; i++) {
+                  //  fileData.append(files[i].name, files[i]);
+                //}
+
+               
+
+                $.ajax({
+                    url: '/Form/OnPostUploadAsync',
+                    type: "POST",
+                    contentType: false, // Not to set any content header
+                    processData: false, // Not to process data
+                    data: fileData,
+                    success: function (result) {
+                        alert(result.SuccessMsg);
+                    },
+                    error: function (err) {
+                        alert(err.statusText);
+                    }
+                });
+            } else {
+                alert("FormData is not supported.");
+            }
+        });
+    });
+</script>
+
