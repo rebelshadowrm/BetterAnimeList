@@ -22,20 +22,21 @@
     </thead>
     <tbody>
 
-        
-        @foreach (var elem in Model.AnimeListItems)
-        {
-        <tr>
+            @foreach (var elem in Model.AnimeListItems)
+            {
+                <tr class="@(elem.StatusName.Replace(" ", string.Empty) + "-listitem")">
+                    <td>@elem.Anime.Title</td>
+                    <td> @elem.StatusName</td>
+                    <td> @elem.Anime.TypeName</td>
+                    <td data-sort="@elem.Rating"> @(elem.Rating == 0 ? "Unrated" : @elem.Rating.ToString())</td>
+                    <td data-sort="@elem.Progress"> @(elem.Progress + '/' + @elem.Anime.Epcount == 0 ? "∞" : @elem.Anime.Epcount.ToString())</td>
 
-            <td>@elem.Anime.Title</td>
-            <td> @elem.StatusName</td>
-            <td> @elem.Anime.TypeName</td> 
-            <td data-sort="@elem.Rating"> @(elem.Rating == 0 ? "Unrated" : @elem.Rating.ToString())</td>
-            <td data-sort="@elem.Progress"> @(elem.Progress + '/' + @elem.Anime.Epcount == 0 ? "∞" : @elem.Anime.Epcount.ToString())</td>
-
-        </tr>          }
+                </tr>
+            }
     </tbody>
 </table>
+
+
 
 
 
