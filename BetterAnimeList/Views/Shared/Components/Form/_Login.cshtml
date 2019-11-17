@@ -1,34 +1,39 @@
 ﻿@model LoginViewModel
 
 <div>
-    <article class="card-body mx-auto" style="max-width: 400px;">
+    <article class="card-body mx-auto text-center" style="max-width: 400px;">
         <h4 class="card-title mt-3 text-center">Login</h4>
 
         <form asp-controller="Form" asp-action="Login" method="post">
 
-            <div class="form-group input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+            <div>
+                <div class="container-fluid">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        <input asp-for="Username" class="form-control-lg" placeholder="Enter a Username" type="text">
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
                 </div>
-                <input asp-for="Username" class="form-control-lg" placeholder="Enter a Username" type="text">
-                <div>
-                    <span asp-validation-for="Username" class="text-danger"></span>
-                </div>
-            </div>
 
-            <div class="form-group input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                <div class="container-fluid">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input asp-for="Password" type="password" class="form-control-lg" placeholder="Password">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
                 </div>
-                <input asp-for="Password" type="password" class="form-control-lg" placeholder="Password">
-                <div>
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </div>
-            </div>
 
-            <button type="submit" value=submit class="btn btn-primary btn-block">Submit</button>
-            
+
+                <div>
+                    <button type="submit" value=submit class="btn btn-primary btn-block">Submit</button>
+                </div>
+
                 <p> <a class="text-center align-content-center" asp-area="" asp-controller="Home" asp-action="Register">Don't have an account?</a> </p>
+            </div>
         </form>
     </article>
 </div> <!-- card.// -->
