@@ -27,7 +27,7 @@ namespace BetterAnimeList.Controllers
                 return RedirectToAction("Login", "Home");
             }
 
-            return Redirect(Request.Headers["Referer"].ToString());
+            return RedirectToAction("Register", "Home");
         }
 
         //[HttpPost]
