@@ -61,7 +61,7 @@ main
         height: 100%;
         width: 100%;
     background-color: #252525;
-    padding: 1em 5em;
+    
   
 }
 .card-title {
@@ -400,26 +400,7 @@ Single styles
 
 .img-responsive { max-width: 100%; }
 
-.btn
-{
-	color: #fff !important;
-	background-color: royalblue;
-	border-color: #222;
-	display: inline-block;
-	margin-bottom: 0;
-	font-weight: 400;
-	width: 90%;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: middle;
-	cursor: pointer;
-	border: 1px solid transparent;
-	border-radius: .2em;
-	text-decoration: none;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-right: 5.5px;
-}
+
 
 .btn:hover
 {
@@ -467,6 +448,17 @@ Single styles
 Form Styles
 ------------------------*/
 
+card-round-med {
+    max-width: 300px;
+    border-color: khaki;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    border-style: groove;
+    border-radius: 10px;
+}
+
 .input-group-text
 {
 	background-color:  hsla(210,10%,23%,1) !important;
@@ -477,34 +469,29 @@ Form Styles
 }
 input
 {
+    width: 100%;
 	color: #cccccc;
 	background-color: #302525; 
-}	
-
-/* -----------------------
-Wide styles
-------------------------*/
-
-@media (min-width: 42em)
-{
-	.header { padding: 1.5em 3em; }
-	.nav-bar { padding: 1em 3em; }
-	.content { padding: 2em 3em; }
-	.footer { padding: 2em 3em; }
-	
-	.nav li
-	{
-		display: inline;
-		margin: 0 1em 0 0;
-	}
-	
-	.nav a
-	{
-		display: inline;
-		padding: 0;
-		border-bottom: 0;
-	}
 }
+.input-group
+{
+    flex-wrap: nowrap;
+}
+.input-group-icon {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.input-group-withicon {
+    height: calc(1.5em + 1rem + 2px);
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    font-size: smaller;
+}
+
+
+
 
 
 /*List Style Starts Here */
