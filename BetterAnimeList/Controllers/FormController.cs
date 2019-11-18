@@ -17,7 +17,7 @@ namespace BetterAnimeList.Controllers
         [HttpPost]
         public IActionResult Register(RegisterViewModel ModelSent)
         {
-            if (ModelState.IsValid)
+            if (ModelSent.Username != null && ModelState.IsValid)
             {
                 AnimeDBContext context = HttpContext.RequestServices.GetService(typeof(AnimeDBContext)) as AnimeDBContext;
 
