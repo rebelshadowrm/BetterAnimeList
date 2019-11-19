@@ -64,7 +64,7 @@
                            asp-controller="Home"
                            asp-action="UploadTest">UploadTest</a>
                     </li>
-                    
+
 
 
 
@@ -72,44 +72,48 @@
                     <!--Logged In-->
                     @if (@HttpContextAccessor.HttpContext.Session.GetString("username") != string.Empty && @HttpContextAccessor.HttpContext.Session.GetString("username") != null)
                     {
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               asp-area=""
-                               asp-controller="Home"
-                               asp-action="Logout">Logout
-                            </a>
-                        </li>
                         <li class="nav-item" id="AnimeList">
                             <a class="nav-link"
                                asp-area=""
                                asp-controller="Home"
-                               asp-action="AnimeList">AnimeList
+                               asp-action="AnimeList">
+                                AnimeList
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Home"
+                               asp-action="Logout">
+                                Logout
+                            </a>
+                        </li>
+
                     }
                     else
                     {
                         <!-- Logged Out-->
 
-                        <li class="nav-item" id="#Register">
+                        <li class="nav-item modal-link" id="#Register">
                             <a class="nav-link"
                                data-toggle="modal"
                                data-target="#RegisterForm">
-                               Register
+                                Register
                                 <!--asp-area=""
-                                asp-controller="Home"
-                                asp-action="Register">Register-->
+                asp-controller="Home"
+                asp-action="Register">Register-->
                             </a>
                         </li>
 
-                        <li class="nav-item" id="#Login">
+                        <li class="nav-item modal-link" id="#Login">
                             <a class="nav-link"
                                data-toggle="modal"
                                data-target="#LoginForm">
-                               Login
+                                Login
                                 <!--asp-area=""
-                                asp-controller="Home"
-                                asp-action="Login">Login-->
+                asp-controller="Home"
+                asp-action="Login">Login-->
                             </a>
                         </li>
                     }
