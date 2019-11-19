@@ -18,77 +18,113 @@
 
         <nav class="navbar navbar-expand-lg" id="navbar">
 
-                <button class="navbar-toggler cool-blue"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><i class="fas fa-bars fa-1x"></i></span>
-                </button>
+            <button class="navbar-toggler cool-blue"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars fa-1x"></i></span>
+            </button>
 
 
-                <div class="navbar-collapse collapse"
-                     id="navbarSupportedContent">
+            <div class="navbar-collapse collapse"
+                 id="navbarSupportedContent">
 
-                    <a class="navbar-brand"
-                       asp-area=""
-                       asp-controller="Home"
-                       asp-action="Index">
-                        <img src="https://i.ibb.co/sgjNCzT/TennOs.png"
-                             height="50"
-                             width="50"
+                <a class="navbar-brand"
+                   asp-area=""
+                   asp-controller="Home"
+                   asp-action="Index">
+                    <div class="logo-icon">
+                        <img class="logo-icon"
+                             src="https://i.ibb.co/sgjNCzT/TennOs.png"
                              alt="BetterAnimeList" />
-                    </a>
+                        <img class="logo-top"
+                             src="https://cdn.discordapp.com/attachments/105012959465443328/645402259714474050/TennOs2.png"
+                             alt="BetterAnimeList" />
+                    </div>
+                </a>
 
-                    <ul class="navbar-nav mr-auto">
-
-
-                        <li class="nav-item" id="PrivacyLink">
-                            <a class="nav-link" asp-area=""
-                               asp-controller="Home"
-                               asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item" id="UserListLink">
-                            <a class="nav-link" asp-area=""
-                               asp-controller="Home"
-                               asp-action="UserList">UserList</a>
-                        </li>
-                        <li class="nav-item" id="UploadTestLink">
-                            <a class="nav-link" asp-area=""
-                               asp-controller="Home"
-                               asp-action="UploadTest">UploadTest</a>
-                        </li>
+                <ul class="navbar-nav mr-auto">
 
 
+                    <li class="nav-item" id="PrivacyLink">
+                        <a class="nav-link" asp-area=""
+                           asp-controller="Home"
+                           asp-action="Privacy">Privacy</a>
+                    </li>
+                    <li class="nav-item" id="UserListLink">
+                        <a class="nav-link" asp-area=""
+                           asp-controller="Home"
+                           asp-action="UserList">UserList</a>
+                    </li>
+                    <li class="nav-item" id="UploadTestLink">
+                        <a class="nav-link" asp-area=""
+                           asp-controller="Home"
+                           asp-action="UploadTest">UploadTest</a>
+                    </li>
+                    
 
-                        <!--Logged In-->
-                        @if (@HttpContextAccessor.HttpContext.Session.GetString("username") != string.Empty && @HttpContextAccessor.HttpContext.Session.GetString("username") != null)
-                        {
+
+
+
+                    <!--Logged In-->
+                    @if (@HttpContextAccessor.HttpContext.Session.GetString("username") != string.Empty && @HttpContextAccessor.HttpContext.Session.GetString("username") != null)
+                    {
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Home"
+                               asp-action="Logout">Logout
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="AnimeList">AnimeList</a>
+                        <li class="nav-item" id="AnimeList">
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Home"
+                               asp-action="AnimeList">AnimeList
+                            </a>
                         </li>
-                        }
-                        else
-                        {
+                    }
+                    else
+                    {
                         <!-- Logged Out-->
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+
+                        <li class="nav-item" id="#Register">
+                            <a class="nav-link"
+                               data-toggle="modal"
+                               data-target="#RegisterForm">
+                               Register
+                                <!--asp-area=""
+                                asp-controller="Home"
+                                asp-action="Register">Register-->
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+
+                        <li class="nav-item" id="#Login">
+                            <a class="nav-link"
+                               data-toggle="modal"
+                               data-target="#LoginForm">
+                               Login
+                                <!--asp-area=""
+                                asp-controller="Home"
+                                asp-action="Login">Login-->
+                            </a>
                         </li>
-                        }
-                    </ul>
-                </div>
+                    }
+                </ul>
+            </div>
         </nav>
-  
+
+
+
+
+
 
     </header>
+    @await Html.PartialAsync("~/Views/Shared/Components/Form/_Login.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Components/Form/_Register.cshtml")
     <div class="container">
         <main role="main">
             @RenderBody()
@@ -101,7 +137,7 @@
         </div>
     </footer>
     <script src="~/lib/chosen/chosen.jquery.min.js"></script>
-    <script src="~/lib/chosen/chosen.proto.min.js"></script> 
+    <script src="~/lib/chosen/chosen.proto.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
@@ -109,7 +145,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/cr-1.5.2/datatables.min.js"></script>
 
-    
+
 
 
     @RenderSection("Scripts", required: false)

@@ -343,6 +343,31 @@ Nav
     border: none !important;
     padding: .29rem .7rem !important;
 }
+    .navbar-brand:hover {
+        background-color: transparent !important;
+    }
+.logo-icon {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    display: inline-block;
+}
+.logo-icon .logo-top {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+    .logo-icon:hover .logo-top {
+        background-color: transparent !important;
+        display: inline;
+    }
+.logo-top {
+    filter: drop-shadow(0 0 5px #23ace8e6);
+    height: 50px;
+    width: 50px;
+}
 
 
 .navbtn

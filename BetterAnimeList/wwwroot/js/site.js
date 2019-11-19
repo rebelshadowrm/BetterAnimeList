@@ -15,6 +15,7 @@ $(document).ready(function () {
         "lengthMenu": [[15, 25, 50, 100, -1], [15, 25, 50, 100, "All"]]
     });
 
+
     var prevScrollpos = window.pageYOffset;
     var topamount = 0;
 
@@ -35,6 +36,8 @@ $(document).ready(function () {
 
         prevScrollpos = currentScrollPos;
     }
+
+
 
 });
 
