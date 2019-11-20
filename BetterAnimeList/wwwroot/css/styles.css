@@ -368,14 +368,16 @@ Nav
     height: 50px;
     width: 50px;
 }
+.modal-link {
+    cursor: pointer;
+}
 
 
-.navbtn
-{
-	margin: 0;
-	padding: 0;
-        overflow: hidden;
-        list-style-type: none;
+.navbtn {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
 }
 
 .navbtn li
