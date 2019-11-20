@@ -23,24 +23,26 @@ namespace BetterAnimeList
         {
 
             services.Add(new ServiceDescriptor(typeof(AnimeDBContext), new AnimeDBContext(Configuration.GetConnectionString("DefaultConnection"))));
+            services.Add(new ServiceDescriptor(typeof(LoginViewModel), new LoginViewModel()));
+            services.Add(new ServiceDescriptor(typeof(RegisterViewModel), new RegisterViewModel()));
 
             //services.AddDbContext<AnimeDBContext>(options =>
             //    options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
 
-           /*
-            services.ConfigureApplicationCookie(options =>
-            {
-                options.AccessDeniedPath = "/Home/Login";
-                options.Cookie.Name = "BetterAnimeList";
-                options.Cookie.HttpOnly = true;
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
-                options.LoginPath = "/Home/Login";
-                // ReturnUrlParameter requires 
-                //using Microsoft.AspNetCore.Authentication.Cookies;
-                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
-                options.SlidingExpiration = true;
-            });
-            */
+            /*
+             services.ConfigureApplicationCookie(options =>
+             {
+                 options.AccessDeniedPath = "/Home/Login";
+                 options.Cookie.Name = "BetterAnimeList";
+                 options.Cookie.HttpOnly = true;
+                 options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                 options.LoginPath = "/Home/Login";
+                 // ReturnUrlParameter requires 
+                 //using Microsoft.AspNetCore.Authentication.Cookies;
+                 options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                 options.SlidingExpiration = true;
+             });
+             */
 
 
             services.AddSession(options =>

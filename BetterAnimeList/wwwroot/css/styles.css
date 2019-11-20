@@ -473,7 +473,7 @@ Single styles
 Form Styles
 ------------------------*/
 
-card-round-med {
+.card-round-med {
     max-width: 300px;
     border-color: khaki;
     border-top-style: none;

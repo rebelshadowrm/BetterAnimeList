@@ -1,0 +1,52 @@
+﻿@model RegisterViewModel
+
+
+
+
+<article class="card-body mx-auto text-center card-round-med">
+    <h4 class="card-title mt-3 text-center">Register</h4>
+
+    <form asp-controller="Form" asp-action="Register" method="post">
+
+        <div>
+            <div>
+                <span asp-validation-for="Username" class="text-danger"></span>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend input-group-icon">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input asp-for="Username" class="input-group-withicon" placeholder="Enter a Username" type="text">
+
+                </div>
+            </div>
+
+            <div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend input-group-icon">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input asp-for="Password" type="password" class="input-group-withicon" placeholder="Password">
+
+                </div>
+            </div>
+
+            <div>
+                <span asp-validation-for="RepeatPassword" class="text-danger"></span>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text input-group-icon"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input asp-for="RepeatPassword" type="password" class="input-group-withicon" placeholder="Repeat Password">
+
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" value=submit class="btn btn-primary btn-block">Submit</button>
+            </div>
+
+            <p><a class="text-center align-content-center" asp-area="" asp-controller="Home" asp-action="Login">Have an account?</a></p>
+        </div>
+    </form>
+</article>
