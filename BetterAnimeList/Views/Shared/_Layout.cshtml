@@ -101,8 +101,8 @@
                                data-target="#RegisterForm">
                                 Register
                                 <!--asp-area=""
-                asp-controller="Home"
-                asp-action="Register">Register-->
+                            asp-controller="Home"
+                            asp-action="Register">Register-->
                             </a>
                         </li>
 
@@ -112,8 +112,8 @@
                                data-target="#LoginForm">
                                 Login
                                 <!--asp-area=""
-                asp-controller="Home"
-                asp-action="Login">Login-->
+                            asp-controller="Home"
+                            asp-action="Login">Login-->
                             </a>
                         </li>
                     }
@@ -122,13 +122,22 @@
         </nav>
 
 
-
-
-
-
+        <div class="modal fade" id="LoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog cascading-modal" role="document">
+                <div class="modal-content">
+                    @await Component.InvokeAsync("Login")
+                </div> <!-- card.// -->
+            </div>
+        </div>
+        <div class="modal fade" id="RegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog cascading-modal" role="document">
+                <div class="modal-content">
+                    @await Component.InvokeAsync("Register")
+                </div> <!-- card.// -->
+            </div>
+        </div>
     </header>
-    @await Html.PartialAsync("~/Views/Shared/Components/Form/_Login.cshtml")
-    @await Html.PartialAsync("~/Views/Shared/Components/Form/_Register.cshtml")
+
     <div class="container">
         <main role="main">
             @RenderBody()
