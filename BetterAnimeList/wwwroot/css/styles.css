@@ -179,7 +179,9 @@ th, td
 	text-align: left;
 	border-bottom: 1px solid #ddd;
 }
-
+#lists {
+   
+}
 
 
 /* -----------------------
@@ -194,12 +196,6 @@ Layout styles
 	line-height: 1;
 }	
 	
-.container
-{
-	max-width: 100em;
-	margin: 0 auto;
-	background-color: #252525;
-}
 
 header
 {
@@ -475,16 +471,10 @@ Single styles
 Form Styles
 ------------------------*/
 
-.card-round-med {
-    max-width: 300px;
-    border-color: khaki;
-    border-top-style: none;
-    border-right-style: none;
-    border-bottom-style: none;
-    border-left-style: none;
-    border-style: groove;
-    border-radius: 10px;
-}
+
+
+
+
 
 .input-group-text
 {

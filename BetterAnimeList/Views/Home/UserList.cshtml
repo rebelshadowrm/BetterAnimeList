@@ -7,22 +7,23 @@
 
 }
 
-
-<table id="UserList" class="table table-striped table-bordered" style="width:100%">
-    <thead>
-        <tr>
-            <th>Username</th>
-            <th>AnimeList</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        @foreach (var elem in Model.Users)
-        {
+<div class="container" id="lists">
+    <table id="UserList" class="table table-striped table-bordered" style="width:100%">
+        <thead>
             <tr>
-                <td><a asp-controller="Home" asp-action="Profile" asp-route-username="@elem.Username">@elem.Username</a></td>
-                <td><a asp-controller="Home" asp-action="AnimeList" asp-route-username="@elem.Username">AnimeList</a></td>
+                <th>Username</th>
+                <th>AnimeList</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+
+            @foreach (var elem in Model.Users)
+            {
+                <tr>
+                    <td><a asp-controller="Home" asp-action="Profile" asp-route-username="@elem.Username">@elem.Username</a></td>
+                    <td><a asp-controller="Home" asp-action="AnimeList" asp-route-username="@elem.Username">AnimeList</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

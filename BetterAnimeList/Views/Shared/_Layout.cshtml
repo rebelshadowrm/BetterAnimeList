@@ -122,15 +122,17 @@
         </nav>
 
 
-        <div class="modal fade" id="LoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog cascading-modal" role="document">
+        <div class="modal fade" id="LoginForm" tabindex="-1" role="dialog"
+             aria-labelledby="ModalLogin" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content">
                     @await Component.InvokeAsync("Login")
                 </div> <!-- card.// -->
             </div>
         </div>
-        <div class="modal fade" id="RegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog cascading-modal" role="document">
+        <div class="modal fade" id="RegisterForm" tabindex="-1" role="dialog"
+             aria-labelledby="ModalRegister" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content">
                     @await Component.InvokeAsync("Register")
                 </div> <!-- card.// -->
@@ -138,7 +140,7 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="container pt-5">
         <main role="main">
             @RenderBody()
         </main>
