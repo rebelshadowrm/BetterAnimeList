@@ -17,20 +17,8 @@
     <header>
 
         <nav class="navbar navbar-expand-lg" id="navbar">
+            <div class="container">
 
-            <button class="navbar-toggler cool-blue"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><i class="fas fa-bars fa-1x"></i></span>
-            </button>
-
-
-            <div class="navbar-collapse collapse"
-                 id="navbarSupportedContent">
 
                 <a class="navbar-brand"
                    asp-area=""
@@ -46,9 +34,7 @@
                     </div>
                 </a>
 
-                <ul class="navbar-nav mr-auto">
-
-
+                <ul class="nav navbar-nav">
                     <li class="nav-item" id="PrivacyLink">
                         <a class="nav-link" asp-area=""
                            asp-controller="Home"
@@ -64,6 +50,10 @@
                            asp-controller="Home"
                            asp-action="UploadTest">UploadTest</a>
                     </li>
+
+
+
+
 
 
 
@@ -96,31 +86,47 @@
                         <!-- Logged Out-->
 
                         <li class="nav-item modal-link" id="#Register">
-                            <a class="nav-link"
+                            <a class="nav-link" tabindex="-1"
                                data-toggle="modal"
                                data-target="#RegisterForm">
                                 Register
                                 <!--asp-area=""
-                            asp-controller="Home"
-                            asp-action="Register">Register-->
+                    asp-controller="Home"
+                    asp-action="Register">Register-->
                             </a>
                         </li>
 
                         <li class="nav-item modal-link" id="#Login">
-                            <a class="nav-link"
+                            <a class="nav-link" tabindex="-1"
                                data-toggle="modal"
                                data-target="#LoginForm">
                                 Login
                                 <!--asp-area=""
-                            asp-controller="Home"
-                            asp-action="Login">Login-->
+                    asp-controller="Home"
+                    asp-action="Login">Login-->
                             </a>
                         </li>
                     }
                 </ul>
+                
+
+
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="dropdown dropleft">
+                        <a tabindex="-1" data-toggle="dropdown" data-container="body" class="dropdown-link dropdown-toggle">Login <span class="caret"></span></a>
+                        <ul class="dropdown-menu p-0" id="logindropdown">
+                            <li class="dropdown-header p-0">
+                                @await Component.InvokeAsync("Login")
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </nav>
 
+        
+            
+        
 
         <div class="modal fade" id="LoginForm" tabindex="-1" role="dialog"
              aria-labelledby="ModalLogin" aria-hidden="true">
@@ -151,12 +157,16 @@
             &copy; 2019 - BetterAnimeList - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="~/lib/chosen/chosen.jquery.min.js"></script>
-    <script src="~/lib/chosen/chosen.proto.min.js"></script>
+
+
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/chosen/chosen.jquery.min.js"></script>
+    <script src="~/lib/chosen/chosen.proto.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-html5-1.6.1/cr-1.5.2/datatables.min.js"></script>
 

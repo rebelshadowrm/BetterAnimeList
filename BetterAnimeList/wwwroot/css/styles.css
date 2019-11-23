@@ -204,14 +204,6 @@ header
 
 .header-heading { margin: 0; }
 
-article
-{
-    color: white;
-    font-weight: bolder;
-    width: 100%;
-    margin-top: 1em;
-    padding: 1px;
-}
 
 
 
@@ -277,63 +269,57 @@ footer p
 /* -----------------------
 Nav
 ------------------------*/
-
-.navbar
-{
+#logindropdown {
+    top: 40px;
+    right: 0;
+    width: 300px;  
+    box-shadow: #23ace8e6 0 0 6px 3px;
+}
+    #logindropdown > .dropdown-header {
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome, Opera and Firefox */
+    }
+.dropdown-link {
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome, Opera and Firefox */
+}
+nav .container > ul > li > a {
+    margin-left: -1px;
     display: inline-table;
-
+    color: #23ace8e6;
+    text-align: center;
+    padding: .5rem .75rem;
+    text-decoration: none;
 }
-#navbar {
-    background-color: #252525; /* Black background color */
-    position: fixed; /* Make it stick/fixed */
-    top: 0; /* Stay on top */
-    width: 100%; /* Full width */
-    font-weight: 600;
-    transition: background 0.8s ease 0s, top 0.5s ease 0s;
-    z-index: 5;
-}
-.navbar-collapse {
-    overflow: hidden !important;
-}
-    /* Style the navbar links */
-    #navbar a {
-        margin-left: -1px;
-        display: inline-table;
-        color: #23ace8e6;
-        text-align: center;
-        padding: .5rem .75rem;
-        text-decoration: none;
-    /*--- Border Box
-    border: 1px solid #dee2e6;
-    border-top-width: 1px;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-top-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-top-color: rgb(222, 226, 230);
-    border-right-color: rgb(222, 226, 230);
-    border-bottom-color: rgb(222, 226, 230);
-    border-left-color: rgb(222, 226, 230);
-    -moz-border-top-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    border-image-source: none;
-    border-image-slice: 100%;
-    border-image-width: 1;
-    border-image-outset: 0;
-    border-image-repeat: stretch stretch;
-    */
+    nav .container > ul > li > a:hover {
+        color: black;
+        background-color: #23ace8e6;
+        border-color: #23ace8e6;
     }
 
-        #navbar a:hover {
-            color: black;
-            background-color: #23ace8e6;
-            border-color: #23ace8e6;
-        }
+    #navbar {
+        background-color: #252525; /* Black background color */
+        position: fixed; /* Make it stick/fixed */
+        top: 0; /* Stay on top */
+        width: 100%; /* Full width */
+        font-weight: 600;
+        transition: background 0.8s ease 0s, top 0.5s ease 0s;
+        z-index: 5;
+    }
+
+    
+
 .navbar-brand {
     margin-right: 0px;
     border: none !important;
@@ -471,7 +457,11 @@ Single styles
 Form Styles
 ------------------------*/
 
+#LoginRegister {
+    color: #ccc;
+    background-color: #252525;
 
+}
 
 
 

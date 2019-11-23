@@ -14,7 +14,13 @@ $(document).ready(function () {
         "order": [[3, "desc"]],
         "lengthMenu": [[15, 25, 50, 100, -1], [15, 25, 50, 100, "All"]]
     });
-
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    });
+    $('#logindropdown > .dropdown-header').click(function (e) {
+        e.stopPropagation();
+    });
+    
 
     var prevScrollpos = window.pageYOffset;
     var topamount = 0;
@@ -40,6 +46,7 @@ $(document).ready(function () {
 
 
 });
+
 
 function clamp(num, min, max) {
     return num <= min ? min : num >= max ? max : num;
