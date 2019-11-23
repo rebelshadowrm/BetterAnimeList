@@ -4,3 +4,6 @@
 *.pdb
 /BetterAnimeList/obj
 /BetterAnimeList/bin
+*.pubxml
+BetterAnimeList/BetterAnimeList.csproj.user
+BetterAnimeList/Properties/PublishProfiles/CustomProfile.pubxml.user
