@@ -50,70 +50,71 @@
                            asp-controller="Home"
                            asp-action="UploadTest">UploadTest</a>
                     </li>
-
-
-
-
-
-
-
-
-
-                    <!--Logged In-->
-                    @if (@HttpContextAccessor.HttpContext.Session.GetString("username") != string.Empty && @HttpContextAccessor.HttpContext.Session.GetString("username") != null)
-                    {
-                        <li class="nav-item" id="AnimeList">
-                            <a class="nav-link"
-                               asp-area=""
-                               asp-controller="Home"
-                               asp-action="AnimeList">
-                                AnimeList
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               asp-area=""
-                               asp-controller="Home"
-                               asp-action="Logout">
-                                Logout
-                            </a>
-                        </li>
-
-                    }
-                    else
-                    {
-                        <!-- Logged Out-->
-
-                        <li class="nav-item modal-link" id="#Register">
-                            <a class="nav-link" tabindex="-1"
-                               data-toggle="modal"
-                               data-target="#RegisterForm">
-                                Register
-                                <!--asp-area=""
-                    asp-controller="Home"
-                    asp-action="Register">Register-->
-                            </a>
-                        </li>
-
-                        <li class="nav-item modal-link" id="#Login">
-                            <a class="nav-link" tabindex="-1"
-                               data-toggle="modal"
-                               data-target="#LoginForm">
-                                Login
-                                <!--asp-area=""
-                    asp-controller="Home"
-                    asp-action="Login">Login-->
-                            </a>
-                        </li>
-                    }
                 </ul>
-                
 
 
+
+
+
+
+
+
+
+                <!--Logged In-->
+                @if (@HttpContextAccessor.HttpContext.Session.GetString("username") != string.Empty && @HttpContextAccessor.HttpContext.Session.GetString("username") != null)
+                {
+            <ul class="nav navbar-nav">
+                <li class="nav-item" id="AnimeList">
+                    <a class="nav-link"
+                       asp-area=""
+                       asp-controller="Home"
+                       asp-action="AnimeList">
+                        AnimeList
+                    </a>
+                </li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-area=""
+                           asp-controller="Home"
+                           asp-action="Logout">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+
+                }
+                else
+                {
+                <!-- Logged Out-->
+
+                <ul class="nav navbar-nav">
+                    <li class="nav-item modal-link" id="#Register">
+                        <a class="nav-link" tabindex="-1"
+                           data-toggle="modal"
+                           data-target="#RegisterForm">
+                            Register
+                            <!--asp-area=""
+                asp-controller="Home"
+                asp-action="Register">Register-->
+                        </a>
+                    </li>
+
+                    <li class="nav-item modal-link" id="#Login">
+                        <a class="nav-link" tabindex="-1"
+                           data-toggle="modal"
+                           data-target="#LoginForm">
+                            Login
+                            <!--asp-area=""
+                asp-controller="Home"
+                asp-action="Login">Login-->
+                        </a>
+                    </li>
+                </ul>
                 <ul class="nav navbar-nav ml-auto">
                     <li class="dropdown dropleft">
-                        <a tabindex="-1" data-toggle="dropdown" data-container="body" class="dropdown-link dropdown-toggle">Login <span class="caret"></span></a>
+                        <a tabindex="-1" data-toggle="dropdown" data-container="body" class="dropdown-link">Login <span class="caret"></span></a>
                         <ul class="dropdown-menu p-0" id="logindropdown">
                             <li class="dropdown-header p-0">
                                 @await Component.InvokeAsync("Login")
@@ -121,7 +122,13 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
+                }
+
+
+
+
+
+</div>
         </nav>
 
         
