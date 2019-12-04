@@ -294,6 +294,15 @@ Nav
     user-select: none; /* Non-prefixed version, currently
                         supported by Chrome, Opera and Firefox */
 }
+#Login, #Register {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome, Opera and Firefox */
+}
 nav .container > ul > li > a {
     margin-left: -1px;
     display: inline-table;
@@ -306,6 +315,7 @@ nav .container > ul > li > a {
         color: black;
         background-color: #23ace8e6;
         border-color: #23ace8e6;
+        border-radius: 5px;
     }
 
     #navbar {
@@ -316,7 +326,26 @@ nav .container > ul > li > a {
         font-weight: 600;
         transition: background 0.8s ease 0s, top 0.5s ease 0s;
         z-index: 5;
+        
     }
+.navshadow {
+    box-shadow: 0 -4px 8px 9px #404040;
+    border-bottom: #353535;
+    border-bottom-style: outset;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    filter: brightness(90%);
+}
+.navheight {
+    height: 25px;
+}
+
+/*
+    active nav link
+
+    filter: brightness(135%);
+    box-shadow: 0px 20px 3px -16px #23ace8e6;
+*/
 
     
 

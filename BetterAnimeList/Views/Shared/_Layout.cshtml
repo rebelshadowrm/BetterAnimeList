@@ -16,11 +16,11 @@
 <body>
     <header>
 
-        <nav class="navbar navbar-expand-lg" id="navbar">
-            <div class="container">
+        <nav class="navbar navbar-expand-lg navshadow" id="navbar">
+            <div class="container navheight">
 
 
-                <a class="navbar-brand"
+                <a class="navbar-brand" id="HomeLogoLink"
                    asp-area=""
                    asp-controller="Home"
                    asp-action="Index">
@@ -35,29 +35,13 @@
                 </a>
 
                 <ul class="nav navbar-nav">
-                    <li class="nav-item" id="PrivacyLink">
-                        <a class="nav-link" asp-area=""
-                           asp-controller="Home"
-                           asp-action="Privacy">Privacy</a>
-                    </li>
                     <li class="nav-item" id="UserListLink">
                         <a class="nav-link" asp-area=""
                            asp-controller="Home"
                            asp-action="UserList">UserList</a>
                     </li>
-                    <li class="nav-item" id="UploadTestLink">
-                        <a class="nav-link" asp-area=""
-                           asp-controller="Home"
-                           asp-action="UploadTest">UploadTest</a>
-                    </li>
+
                 </ul>
-
-
-
-
-
-
-
 
 
                 <!--Logged In-->
@@ -72,63 +56,74 @@
                         AnimeList
                     </a>
                 </li>
-                </ul>
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link"
-                           asp-area=""
-                           asp-controller="Home"
-                           asp-action="Logout">
-                            Logout
-                        </a>
-                    </li>
-                </ul>
+                <li class="nav-item" id="Upload">
+                    <a class="nav-link" asp-area=""
+                       asp-controller="Home"
+                       asp-action="UploadTest">UploadTest</a>
+                </li>
+                <li class="nav-item" id="ProfileLink">
+                    <a class="nav-link" asp-area=""
+                       asp-controller="Home"
+                       asp-action="Profile">Profile</a>
+                </li>
+            </ul>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" id="Logout">
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Home"
+                               asp-action="Logout">
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                   
 
                 }
                 else
                 {
-                <!-- Logged Out-->
+                    <!-- Logged Out-->
 
-                <ul class="nav navbar-nav">
-                    <li class="nav-item modal-link" id="#Register">
-                        <a class="nav-link" tabindex="-1"
-                           data-toggle="modal"
-                           data-target="#RegisterForm">
-                            Register
-                            <!--asp-area=""
-                asp-controller="Home"
-                asp-action="Register">Register-->
-                        </a>
-                    </li>
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item modal-link" id="Register">
+                            <a class="nav-link" tabindex="-1"
+                               data-toggle="modal"
+                               data-target="#RegisterForm">
+                                Register
+                                <!--asp-area=""
+                    asp-controller="Home"
+                    asp-action="Register">Register-->
+                            </a>
+                        </li>
 
-                    <li class="nav-item modal-link" id="#Login">
-                        <a class="nav-link" tabindex="-1"
-                           data-toggle="modal"
-                           data-target="#LoginForm">
-                            Login
-                            <!--asp-area=""
-                asp-controller="Home"
-                asp-action="Login">Login-->
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="dropdown dropleft">
-                        <a tabindex="-1" data-toggle="dropdown" data-container="body" class="dropdown-link">Login <span class="caret"></span></a>
-                        <ul class="dropdown-menu p-0" id="logindropdown">
-                            <li class="dropdown-header p-0">
-                                @await Component.InvokeAsync("Login")
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                        <li class="nav-item modal-link" id="Login">
+                            <a class="nav-link" tabindex="-1"
+                               data-toggle="modal"
+                               data-target="#LoginForm">
+                                Login
+                                <!--asp-area=""
+                    asp-controller="Home"
+                    asp-action="Login">Login-->
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="dropdown dropleft">
+                            <a tabindex="-1" data-toggle="dropdown" data-container="body" class="dropdown-link">Login <span class="caret"></span></a>
+                            <ul class="dropdown-menu p-0" id="logindropdown">
+                                <li class="dropdown-header p-0">
+                                    @await Component.InvokeAsync("Login")
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 }
 
 
 
 
 
-</div>
+            </div>
         </nav>
 
         
